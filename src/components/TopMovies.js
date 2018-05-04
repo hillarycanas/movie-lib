@@ -2,7 +2,9 @@ import React from 'react';
 import { Segment, Image, Header,Card, Icon} from 'semantic-ui-react'
 import '../App.css';
 
-
+/**
+ * Component TopMovies: Renders list of movie posters.
+ */
 
 export default class TopMovies extends React.Component {
   render() {

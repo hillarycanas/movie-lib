@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Segment, Image, Header, Grid} from 'semantic-ui-react'
 import '../App.css';
 
+/**
+ * Component Movie: Render movie section. 
+ * Includes movie poster, backdrop and movie details
+ */
 class Movie extends Component {
    render() {
     const data = this.props.data

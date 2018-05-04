@@ -7,6 +7,10 @@ import '../App.css';
 const APIKEY ='f3c68b656d6745edbe8008be79baa7c1';
 let baseURL = 'https://api.themoviedb.org/3/';
 
+
+/**
+ * Component MainMenu: Renders top menu.
+ */
 class MainMenu extends Component {
 
  	componentWillMount() {
@@ -18,10 +22,8 @@ class MainMenu extends Component {
 	componentDidMount() {
 	  
 	}
-	/** [runSearch description]
-	 * @param  {[type]}
-	 * @param  {[type]}
-	 * @return {[type]}
+	/** [runSearch]	gets movies from value and display the top 5 results.	
+	 * @param  {string} value - search input value
 	 */
   	runSearch = (e, { value }) => {
 	    this.setState({ isLoading: true, value })
@@ -36,7 +38,9 @@ class MainMenu extends Component {
 	          }, 300)
 	    })
   	}
-
+  	/** [handleResult] give results to HomePage to render movie.		
+	 * @param  {Object} result -  Movie searched for.
+	 */
   	handleResultSelect = (e, { result }) => {
   		if (result !== 'undefined'){ 
   			this.resetComponent()
@@ -51,7 +55,7 @@ class MainMenu extends Component {
 	    return (	    	
 			<Menu borderless stackable>
 				<Menu.Item>
-            		<a href="./" title="test"><img src={logo} width={80} className="logo" alt="The Movie Database" /></a>
+            		<a href="./"><img src={logo} width={80} className="logo" alt="The Movie Database" /></a>
             	</Menu.Item>
             	<Menu.Item position='right'>
 	            	<Search
